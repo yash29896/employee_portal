@@ -1,5 +1,6 @@
 import React from "react";
-import { useEffect, useState, useNavigate } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 import Employee from "./Employee";
 
