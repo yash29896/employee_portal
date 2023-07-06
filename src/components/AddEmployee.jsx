@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useNavigate } from "react";
 import EmployeeService from "../services/EmployeeService";
 const AddEmployee = () => {
   const [employee, setEmployee] = useState({
@@ -20,16 +20,16 @@ const AddEmployee = () => {
       emailId: "",
     });
   };
+  const navigate = useNavigate();
 
   const saveEmployee = (e) => {
     e.preventDefault();
     EmployeeService.saveEmployee(employee)
-      .then((response) => {
-        console.log(response);
+      .then((res) => {
+        navigate("/employeeList");
+        console.log(res);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(console.log);
   };
 
   return (
